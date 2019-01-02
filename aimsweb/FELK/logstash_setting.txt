@@ -1,0 +1,51 @@
+#############################################
+#             작성자 : 김건훈               #
+#                                           #
+#          Elasticsearch 연동을 위해        #
+#            Logstash 설정하는 법           #
+#                 2018.11.14                #
+#############################################
+#------------------------------------------------------
+#
+# 1. Logstash를 돌릴 .conf파일 생성
+#    기본 경로 : /etc/logstash/conf.d/
+#
+# 2. filebeat의 input을 설정해준다. host와 port를 자기 자신으로 설정하면 된다.
+#
+# 3. 정규표현식을 사용해 filter를 만든다. if 조건문을 사용해서 다양한 filter를 제작할 수 있다.
+#  1) grok, mutate 등 다양한 것들을 사용해서 filter를 만들 수 있지만 grok밖에 모른다.
+#
+# 4. ES로 내보낼 때 index이름에 대문자와 특수문자가 섞여들어가지 않도록 조심하자.
+#
+# 5. logstash 실행
+#    /opt/logstash/bin/logstash -f /etc/logstash/conf.d/logstash.conf
+#
+#------------------------------------------------------
+#input {
+#  beats {
+#    host => "0.0.0.0"
+#    port => 5044
+#    client_inactivity_timeout => 1000
+#  }
+#}
+#filter {
+#    if "error" in [message]
+#    {
+#      grok{match => {"message" => ".*(?<Day>\d{4}\/\d{2}\/\d{2}) (?<Time>\d{2}\:\d{2}\:\d{2})((?<Num1>\(\d{4,}\))|(?<Num2>\(\d{3}\))(?<Num3>\(\d{4,}\)))(?<ErrMsg>.*)"}}
+#    }
+#    else
+#    {
+#      grok{match => {"message" => ".*(?<Day>\d{4}\/\d{2}\/\d{2}) (?<Time>\d{2}\:\d{2}\:\d{2})((?<Num1>\(\d{4,}\))|(?<Num2>\(\d{3}\))(?<Num3>\(\d{4,}\)))(?<Msg>.*)"}}
+#    }
+#    date {
+#      match => [ "syslog_timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
+#    }
+#}
+#output {
+#  elasticsearch {
+#    hosts => ["124.49.54.38:29200"]
+#    index => "aimslog-%{+YYYY.MM.dd}"
+#    document_type => "system_logs"
+#  }
+#  stdout { codec => rubydebug }
+#}

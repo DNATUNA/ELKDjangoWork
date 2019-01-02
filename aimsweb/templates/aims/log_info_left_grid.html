@@ -1,0 +1,62 @@
+{% load staticfiles %}
+
+<div class="row sidenav_r2">
+    <h4>RUN ID : {{ loginfo.aims_id }} </h4>
+    <h4>HOST ID : {{ loginfo.host_id }}</h4>
+</div>
+<div class="row sidenav_r2">
+    <table class="table table-hover">
+        <tr>
+            <td>IP</td>
+            <td>124.49.54.38</td>
+        </tr>
+        <tr>
+            <td>OS Type</td>
+            <td>Ubuntu</td>
+        </tr>
+        <tr>
+            <td>MQ Type</td>
+            <td>Test 1</td>
+        </tr>
+        <tr>
+            <td>MQ Ver</td>
+            <td>Test 2</td>
+        </tr>
+        <tr>
+            <td>DB Type</td>
+            <td>MySQL</td>
+        </tr>
+        <tr>
+            <td>Application ID</td>
+            <td>{{ loginfo.app_id }}</td>
+        </tr>
+        <tr>
+            <td>System Status</td>
+            <td>{{ loginfo.system_status }}</td>
+        </tr>
+    </table>
+
+
+    <dl>
+        <dd>Description :</dd>
+        <dd>{{ loginfo.description }}</dd>
+    </dl>
+</div>
+
+<div class="logInfoBottomTable">
+    <table class="table table-bordered">
+        <tr>
+            <td style="border-color:#000000">
+                <span>Hour PM 2 ~ PM 3</span>
+
+            </td>
+            <td style="border-color:#000000">
+                <span>Hour PM 2 ~ PM 3</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-color:#000000">3</td>
+            <td style="border-color:#000000">4</td>
+        </tr>
+    </table>
+</div>

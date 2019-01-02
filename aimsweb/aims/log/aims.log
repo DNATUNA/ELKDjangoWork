@@ -1,0 +1,9 @@
+[DEBUG] [search.py:16] 2018-11-15 23:04:28,567 > TOTAL: 918910
+[DEBUG] [search.py:16] 2018-11-15 23:04:28,578 > TOTAL: 918910
+[DEBUG] [search.py:16] 2018-11-15 23:04:28,587 > TOTAL: 918910
+[WARNING] [<input>:1] 2018-11-15 23:14:51,513 > aaaa
+[WARNING] [<input>:1] 2018-11-15 23:14:51,513 > aaaa
+[INFO] [<input>:1] 2018-11-15 23:15:03,690 > asdf
+[INFO] [<input>:1] 2018-11-15 23:15:03,690 > asdf
+[ERROR] [<input>:1] 2018-11-15 23:15:08,540 > asdf
+[ERROR] [<input>:1] 2018-11-15 23:15:08,540 > asdf

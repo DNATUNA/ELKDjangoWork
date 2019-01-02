@@ -1,0 +1,68 @@
+<!-- 인증이 적용된 Rheed list 화면 -->
+<!-- 2018.10.22 노홍균 -->
+{% extends 'aims/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="col-sm-3 sidenav">
+            {% include "aims/rheed_info_left_grid.html" %}
+            <div class="row sidenav_r3">
+                <img data-src="holder.js/100%x490/AIMShd1">
+            </div>
+        </div>
+
+        <div class="col-sm-4 rheed_video">
+            <div class="mx-2 rheed_video_clip">
+                {% include "aims/rheed_video.html" %}
+            </div>
+        </div>
+
+        <!-- 오른쪽 차트 그리드 -->
+        <div class="col-sm-5 sidechart">
+            <div class="row chart1">
+                <div class="col-md-4">
+                    <p class="h4">Pattern 1</p>
+                    <p class="h1">{{ rheedinfo.ptn001_cnt }}</p>
+                    <p class="h2">{{ rheedinfo.ptn001_ratio }}%</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="h4">Pattern 2</p>
+                    <p class="h1">{{ rheedinfo.ptn002_cnt }}</p>
+                    <p class="h2">{{ rheedinfo.ptn002_ratio }}%</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="h4">Pattern3</p>
+                    <p class="h1">{{ rheedinfo.ptn003_cnt }}</p>
+                    <p class="h2">{{ rheedinfo.ptn003_ratio }}%</p>
+                </div>
+                {##}
+                {##}
+                {#                <div class="col-md-4">#}
+                {#                    <p class="h4">BRIGHTNESS (avg)</p>#}
+                {#                    <p class="h1">{{ rheedinfo.bright_mean }}</p>#}
+                {##}
+                {##}
+                {#                </div>#}
+                {##}
+                {#                <div class="col-md-4">#}
+                {#                    <p class="h4">Spacing (avg,std)</p>#}
+                {#                    <p class="h1">{{ rheedinfo.space_mean }}</p>#}
+                {#                    <p class="h1">{{ rheedinfo.space_std }}</p>#}
+                {#                </div>#}
+            </div>
+
+
+            <div class="row chart2">
+                <div class="well">
+                    {% include "aims/line_chart_json.html" %}
+                </div>
+            </div>
+
+            <div class="row chart3">
+                <div class="well">
+                    {% include "aims/stacked_area_chart_json.html" %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

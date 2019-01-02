@@ -1,0 +1,7 @@
+humanize
+Django== 2.0.5
+pandas
+numpy
+moment
+elasticsearch
+django-elasticsearch-dsl

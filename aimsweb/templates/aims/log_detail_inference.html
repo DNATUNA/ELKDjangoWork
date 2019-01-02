@@ -1,0 +1,66 @@
+<!-- 인증이 적용된 Rheed list 화면 -->
+<!-- 2018.10.22 노홍균 -->
+{% extends 'aims/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    {% if user.is_authenticated %}
+        {% include "aims/nav_host.html" %}
+        <div class="col-sm-3 col-md-3 col-xl-3  sidenav">
+            {% include "aims/log_info_left_grid.html" %}
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-xl-4 rheed_video">
+            <div class="mx-2 rheed_video_clip">
+                {% include "aims/log_info_center_grid.html" %}
+            </div>
+        </div>
+
+        <!-- 오른쪽 차트 그리드 -->
+        <div class="col-sm-5 sidechart">
+            <div class="row chart1">
+                <div class="col-sm-4 col-md-4 col-xl-4">
+                    <p class="h4">Pattern 1</p>
+                    <p class="h1">{{ loginfo.ptn001_cnt }}</p>
+                    <p class="h2">{{ loginfo.ptn001_ratio }}%</p>
+                </div>
+                <div class="col-sm-4 col-md-4 col-xl-4">
+                    <p class="h4">Pattern 2</p>
+                    <p class="h1">{{ loginfo.ptn002_cnt }}</p>
+                    <p class="h2">{{ loginfo.ptn002_ratio }}%</p>
+                </div>
+                <div class="col-sm-4 col-md-4 col-xl-4">
+                    <p class="h4">Pattern3</p>
+                    <p class="h1">{{ loginfo.ptn003_cnt }}</p>
+                    <p class="h2">{{ loginfo.ptn003_ratio }}%</p>
+                </div>
+                {##}
+                {##}
+                {#                <div class="col-sm-4 col-md-4 col-xl-4">#}
+                {#                    <p class="h4">BRIGHTNESS (avg)</p>#}
+                {#                    <p class="h1">{{ loginfo.bright_mean }}</p>#}
+                {##}
+                {##}
+                {#                </div>#}
+                {##}
+                {#                <div class="col-sm-4 col-md-4 col-xl-4">#}
+                {#                    <p class="h4">Spacing (avg,std)</p>#}
+                {#                    <p class="h1">{{ loginfo.space_mean }}</p>#}
+                {#                    <p class="h1">{{ loginfo.space_std }}</p>#}
+                {#                </div>#}
+            </div>
+
+
+            <div class="row chart2">
+                <div class="well">
+{#                    {% include "aims/line_chart_json.html" %}#}
+                </div>
+            </div>
+
+            <div class="row chart3">
+                <div class="well">
+{#                    {% include "aims/stacked_area_chart_json.html" %}#}
+{#                </div>#}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

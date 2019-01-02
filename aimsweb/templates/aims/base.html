@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="utf-8">
+<head>
+    <title>{% block title %}AIMS{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- AIMS Style -->
+    <link href="{% static 'vendors/bootstrap-3.3.7/dist/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/aims.css' %}" rel="stylesheet">
+
+
+    <script>
+        Holder.add_theme("AIMShd1", {background: "#172d42", foreground: "#172d42", size: 10});
+        Holder.add_theme("AIMShd2", {background: "#000000", foreground: "#000000", size: 10});
+        Holder.add_theme("AIMShd3", {background: "#296281", foreground: "#1d3e51", size: 10});
+    </script>
+</head>
+<body>
+
+<!-- NAV  -->
+
+
+    <div class="container-fluid text-left">
+        <div class="row content" style="background: black">
+      <main>
+        {% block content %}
+
+
+        {% endblock %}
+      </main>
+        </div>
+    </div>
+
+{% block footer %}
+<footer class="container-fluid AIMS_logo">
+    <div align=center>
+        <div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+        </div>
+        <div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+            <img src="{% static 'images/aims.png' %}" height="40" width="40" class="img-responsive" alt="AIMS image">
+        </div>
+        <div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+    <script src="{% static 'vendors/jquery/3.3.1/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap-4.0/js/bootstrap.min.js' %}"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.3.2/holder.min.js" type="text/javascript"></script>
+    <script src="{% static 'js/aims.js' %}"></script>
+</body>
+</html>
+
+

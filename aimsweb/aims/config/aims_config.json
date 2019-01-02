@@ -1,0 +1,79 @@
+{
+  "RUN_TYPE": "DEV_KKH",
+  "COMMON": {
+    "HOME_DIR": "D:/dev/aimsweb/aims",
+    "SECRET_KEY": "secret-key-of-myapp",
+    "USER_NAME": "aims",
+    "DEFAULT_ENCODING_TYPE_INPUT": "utf-8",
+    "DEFAULT_ENCODING_TYPE_OUTPUT": "utf-8",
+    "DEBUG_LEVEL": "debug"
+  },
+  "DEV_NHK": {
+    "AIMS_SETTING": {
+      "DATA_ROOT": "D:/dev/aimsweb/aims/AIMS_DATA",
+      "INPUT_DIR": "INPUT",
+      "OUTPUT_DIR": "OUTPUT",
+      "TMP_DIR": "TMP",
+      "IMAGE_DIR": "IMAGE",
+      "VIDEO_DIR": "VIDEO",
+      "CSV_DIR": "CSV",
+      "JSON_DIR": "JSON",
+      "HEATMAP_DIR": "HEATMAP"
+    },
+    "MODEL": {
+      "TRAINED_MODEL_001": {
+        "MODEL_NAME": "AIMS_MONTHLY_MODEL_MQ1",
+        "MODEL_VER": "0.1",
+        "MODEL_DIR": "D:/dev/aimsweb/aims/AIMS_MODEL",
+        "TRAIN": "TRAIN",
+        "LABEL": "LABEL",
+        "MODEL_FILE": "AIMS_MONTHLY_MODEL_MQ1.hdf5",
+        "TRAIN_DATA_DIR": "D:/dev/aimsweb/aims/AIMS_TRAIN_DATA",
+        "TRAIN_LABEL_FILE": "D:/dev/aimsweb/aims/AIMS_TRAIN_DATA"
+      }
+    },
+    "INFERENCE": {
+      "INFERENCE_MODEL_001": {
+        "MODEL_NAME": "AIMS_MONTHLY_MODEL_MQ1",
+        "MODEL_VER": "1.0",
+        "MODEL_DIR": "D:/dev/aimsweb/aims/AIMS_MODEL/AIMS_MONTHLY_MODEL_MQ1",
+        "MODEL_TYPE": "Supervised Deep learning",
+        "MODEL_FILE": "AIMS_MONTHLY_MODEL_MQ1.hdf5"
+      }
+    }
+  },
+    "DEV_KKH": {
+    "AIMS_SETTING": {
+      "DATA_ROOT": "D:/dev/aimsweb/aims/AIMS_DATA",
+      "INPUT_DIR": "INPUT",
+      "OUTPUT_DIR": "OUTPUT",
+      "TMP_DIR": "TMP",
+      "IMAGE_DIR": "IMAGE",
+      "VIDEO_DIR": "VIDEO",
+      "CSV_DIR": "CSV",
+      "JSON_DIR": "JSON",
+      "HEATMAP_DIR": "HEATMAP"
+    },
+    "MODEL": {
+      "TRAINED_MODEL_001": {
+        "MODEL_NAME": "AIMS_MONTHLY_MODEL_MQ1",
+        "MODEL_VER": "0.1",
+        "MODEL_DIR": "D:/dev/aimsweb/aims/AIMS_MODEL",
+        "TRAIN": "TRAIN",
+        "LABEL": "LABEL",
+        "MODEL_FILE": "AIMS_MONTHLY_MODEL_MQ1.hdf5",
+        "TRAIN_DATA_DIR": "D:/dev/aimsweb/aims/AIMS_TRAIN_DATA",
+        "TRAIN_LABEL_FILE": "D:/dev/aimsweb/aims/AIMS_TRAIN_DATA"
+      }
+    },
+    "INFERENCE": {
+      "INFERENCE_MODEL_001": {
+        "MODEL_NAME": "AIMS_MONTHLY_MODEL_MQ1",
+        "MODEL_VER": "1.0",
+        "MODEL_DIR": "D:/dev/aimsweb/aims/AIMS_MODEL/AIMS_MONTHLY_MODEL_MQ1",
+        "MODEL_TYPE": "Supervised Deep learning",
+        "MODEL_FILE": "AIMS_MONTHLY_MODEL_MQ1.hdf5"
+      }
+    }
+  }
+}

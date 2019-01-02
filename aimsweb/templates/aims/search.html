@@ -1,0 +1,22 @@
+<form method="get">
+    <input id = 'q' name="q" type="text" placeholder="search...">
+</form>
+<p align="center">HITS TOTAL : {{ res.hits.total }}</p>
+{% if q == '' %}
+    <p align="center">Search Nothing (Only list 10 items)</p>
+{% else %}
+    <p align="center">Search about : {{ q }}</p>
+{% endif %}
+<hr>
+
+{% for item in s %}
+    {% if item.Day == NULL %}
+        {{ item.message }}
+    {% else %}
+        {{ item.Day }}
+        {{ item.Time }}
+        {{ item.Msg }}
+        {{ item.ErrMsg }}
+    {% endif %}
+    <br>
+{% endfor %}

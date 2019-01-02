@@ -1,0 +1,301 @@
+html, body {
+    background-color: #000000;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    background-color: #172d42;
+    border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    background-color: #000000;
+}
+.rheed_video {
+    background-color: #000000;
+
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 5px;
+    background-color: #172d42;
+
+    padding-bottom: 0px;
+}
+
+.sidechart {
+    background-color: #172d42;
+
+
+}
+
+.col-sm-4 {
+    height: auto;
+    color: lightgrey;
+    margin-bottom: 0;
+
+}
+
+
+/* 3번째 차트 영역  */
+.col-sm-2 {
+    background-color: #172d42;
+    color: lightgrey;
+}
+
+/* 왼쪽 첫번째 그리드 영역의 스타일 */
+.col-sm-3 {
+    background-color: #172d42;
+    color: lightgrey;
+}
+
+.col-form-label {
+    background-color: #172d42;
+    color: lightgrey;
+    padding: 15px;
+}
+
+.well {
+    /*background-color: #296281;*/
+    background-color: #0F1E2C;
+    border: #0F1E2C;
+    height: 100%;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border-radius: 2px;
+    padding: 2px;
+}
+
+.logInfoBottomTable td{
+  text-align: center;
+  border-color:#000000;
+  background: #000000;
+}
+
+/* 로그인, 로그아웃 팝업 레이어 */
+.pop-layer .pop-container {
+  padding: 20px 25px;
+}
+
+.pop-layer p.txt {
+  color: #666;
+  line-height: 25px;
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding-top: 10px;
+  border-top: 1px solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  border: 5px solid #3571B5;
+  z-index: 10;
+}
+
+.dim-layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dim-layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.dim-layer .pop-layer {
+  display: block;
+}
+
+a.btn-layerClose {
+  display: inline-block;
+  height: 25px;
+  padding: 0 14px 0;
+  border: 1px solid #304a8a;
+  background-color: #3f5a9d;
+  font-size: 13px;
+  color: #fff;
+  line-height: 25px;
+}
+
+a.btn-layerClose:hover {
+  border: 1px solid #091940;
+  background-color: #1f326a;
+  color: #fff;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #0F1E2C;
+    color: lightgray;
+    padding: 5px;
+}
+
+/* DOMM 로고 영역 스타일 */
+
+domm_logo {
+    background-color: #0F1E2C;
+    color: lightgray;
+    max-width: 100%;
+    padding: 5px;
+}
+
+.display-1 {
+    color: lightgray;
+    max-width: 100%;
+    padding: 10px;
+}
+.display-2 {
+    color: lightgray;
+    max-width: 100%;
+    padding: 10px;
+}
+.display-3 {
+    color: lightgray;
+    max-width: 100%;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+.display-4 {
+    color: lightgray;
+    max-width: 100%;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+
+.display-4 {
+    color: lightgray;
+    max-width: 100%;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+
+.h1 {
+    color: lightgray;
+    max-width: 100%;
+    padding-top: 1px;
+    padding-bottom: 4px;
+}
+
+.h2 {
+    color: lightgray;
+    max-width: 100%;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+.h3 {
+    color: lightgray;
+    max-width: 100%;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+.h4 {
+    color: lightgray;
+    max-width: 100%;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+
+
+.list-group-item.active {
+    background-color: transparent;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    fill: white;
+}
+
+
+.nv-legend-text {
+    fill: lightgrey;
+}
+
+
+
+
+.row {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+.sidenav_r1 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 15px;
+}
+
+.sidenav_r2 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 45px;
+    padding-right: 15px;
+}
+.rheed_video_clip {
+    background-color: #000000;
+    padding-bottom: 5px;
+    padding-top: 25px;
+    padding-left: 80px;
+    padding-right: 15px;
+}
+
+/*
+.chart rect {
+  fill: steelblue;
+}
+*/
+
+.bar:hover {
+    fill: brown;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+}

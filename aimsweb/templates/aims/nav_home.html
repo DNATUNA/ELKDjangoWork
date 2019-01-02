@@ -1,0 +1,47 @@
+{% load staticfiles %}
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/aims">AIMS</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+
+
+            <ul class="nav navbar-nav navbar-right">
+                 {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <span class="navbar-text">{{ user.username }}님 환영합니다.</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="btn-layer" href="#layer"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span> logout </a>
+                    <!--로그아웃 이펙트-->
+                    <div class="dim-layer">
+                        <div class="dimBg"></div>
+                            <div id="layer" class="pop-layer">
+                                <div class="pop-container">
+                                    <div class="pop-conts">
+                                        <p class="ctxt mb20">
+                                            성공적으로 로그아웃 되었습니다!
+                                        </p>
+                                        <div class="btn-r">
+                                            <a href="{% url 'logout' %}" class="btn-layerClose">닫기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                     </div>
+                </li>
+                <!-- <li class="text-info">  <span class="glyphicon glyphicon-paperclip" aria-hidden="true"> v0.3 </span> </li> -->
+            {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'login' %}"> <span class="glyphicon glyphicon-log-in" aria-hidden="true"> </span> login </a>
+                  </li>
+                <li class="text-info">
+                </li>
+            {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

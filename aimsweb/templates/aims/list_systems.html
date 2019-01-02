@@ -1,0 +1,49 @@
+{#<!-- 인증이 적용된 Rheed list 화면 -->#}
+{#<!-- 2018.10.22 노홍균 -->#}
+
+{% extends 'aims/base.html' %}
+
+{% load humanize %}
+{% block content %}
+    {% if user.is_authenticated %}
+        {% include 'aims/nav_home.html' %}
+        <div class="container-fluid text-left">
+            <div class="row content" style="background: black">
+                <div class="col-sm-5 col-md-5 col-xl-5" style="background: black; padding-top: 30px;">
+
+
+                    <div class="list-group">
+                        {% for aims_id in latest_systems_list %}
+                            {% if aims_id.use_yn in "Y" %}
+
+                                <a href="{% url 'detail.inference' pk=aims_id.id %}"
+                                   class="list-group-item list-group-item-action flex-column align-items-start active">
+                                    <div class="d-flex w-75 justify-content-between">
+
+                                        <h4 class="mb-1">{{ aims_id.host_id }}
+                                            - {{ aims_id.aims_id }}, {{ aims_id.app_name }}</h4>
+                                        {#                                    <small>{{ aims_id.created_date|naturaltime }}</small>#}
+                                        <small>{{ aims_id.created_date }}</small>
+                                    </div>
+                                    {#                                <p class="mb-1">{{ aims_id.rheed_video_filename }}</p>#}
+                                    <small>{{ aims_id.description }}</small>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+    {% else %}
+    {% include 'aims/nav_home.html' %}
+    <div class="container-fluid text-left">
+
+    </div>
+    {% endif %}
+{% endblock %}
+

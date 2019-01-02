@@ -1,0 +1,19 @@
+#############################################
+#             작성자 : 김건훈               #
+#                                           #
+#         Elasticsearch 에러 해결법         #
+#                                           #
+#                 2018.11.14                #
+#############################################
+#
+#
+# 1. Exception happened: Error raised when there was an exception while talking to ES.
+#    ConnectionError(HTTPConnectionPool(host='127.0.0.1', port=8001): Read timed out. (read timeout=10)) caused by: ReadTimeoutError(HTTPConnectionPool(host='127.0.0.1', port=8001): Read timed out. (read timeout=10)).
+#    --> timeout을 늘려주면 된다. elasticsearch_dsl을 사용하므로 search = Search(using=es, index='aimslog-2018.11.13').params(request_timeout=30) 이런 식으로 해결한다.
+#
+# 2. Result window is too large, from + size must be less than or equal to: ~~
+#    --> max_result_window를 늘려준다. curl -XPUT "http://server-host/index-name/_settings"  -d '{ "index" : { "max_result_window" : 10000000 } }'
+#
+# 3. Content-Type header [application/x-www-form-urlencoded] is not supported
+#    --> 위에 해결법을 입력했을 때 이런 에러가 생기거나 다른 curl요청에 이런 에러가 생기면 -H 'Content-Type: application/json'를 추가해준다.
+#    --> ex. curl -XPUT -H 'Content-Type: application/json' "http://124.49.54.38:29200/aimslog-2018.11.13/_settings"  -d '{ "index" : { "max_result_window" : 10000000 } }'

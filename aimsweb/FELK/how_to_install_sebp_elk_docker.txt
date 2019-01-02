@@ -1,0 +1,36 @@
+#############################################
+#             작성자 : 김건훈               #
+#                                           #
+#           Docker image 중 sebp/elk        #
+#             설치 및 에러 해결법           #
+#                 2018.11.14                #
+#############################################
+#------------------------------------------------------
+# 1. Docker를 설치한다.
+#
+# 2. $sudo sysctl -w vm.max_map_count=262144
+#   ES가 돌아갈 수 있도록 가상머신 크기를 키워준다.
+#   이 설정을 안해주면 ES 서버가 열리지 않는다.
+#   즉, (1/30).. (2/30).. ~ (30/30) 문제를 해결할 수 있다.
+#
+# 3. $sudo docker run --ulimit nofile=65536:65536 -e MAX_OPEN_FILES=65536 \
+#       -e ES_HEAP_SIZE="2g" -e LS_HEAP_SIZE="1g" -e ES_CONNECT_RETRY=100 \
+#       --name elk sebp/elk
+#
+#   설치 코드가 복잡하고 길다. 에러가 발생했던 이슈들을 한 번에 전부 없앤 코드이다.
+#
+#   1) Soft limit와 Hard limit를 둘 다 65536으로 설정해주면 ES서버 켜지지 않는 것을 해결할 수 있다.
+#    --> --ulimit nofile=65536:65536
+#   2) MAX_OPEN_FILES의 기본값은 시스템 기본값과 같다. 그치만 ES는 최소 65536과 같아야 한다.
+#      이를 설정하면 ES서버가 켜지지 않는 것을 해결할 수 있다.
+#   3) ES_HEAP_SIZE와 LS_HEAP_SIZE를 최소 크기로 설정해주어야 Docker가 중간에 죽지 않는다.
+#   4) ES_CONNECT_RERTY를 100으로 설정해주면 부담 없이 ES 서버를 실행시킬 수 있다. 물론 30도
+#      충분한 경우가 많았다.
+#   5) docker image이름을 elk로 설정하고 sebp/elk라는 image를 사용하겠다고 선언했다.
+#
+# 4. $sudo docker exec -it elk /bin/bash에서 다양한 세팅을 진행할 수 있다.
+#
+# 5. $sudo docker stop elk로 서버를 끄고 $sudo docker start elk로 서버를 킬 수 있다.
+#
+# 6. 실험 결과 timeout을 넘기게 되는 로그를 계속 요청하면 ES서버가 다운된다.
+#    해결법은 timeout을 늘리는 것 밖에는 모르겠다.
