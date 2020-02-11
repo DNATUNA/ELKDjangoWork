@@ -1,5 +1,5 @@
 humanize
-Django== 2.0.12
+Django== 2.2.10
 pandas
 numpy
 moment
